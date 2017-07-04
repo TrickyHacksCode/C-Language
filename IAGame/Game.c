@@ -1,16 +1,16 @@
-/* Introdução à Programação - Projeto de 2011
+/* IntroduÃ§Ã£o Ã  ProgramaÃ§Ã£o - Projeto de 2011
 
    Game.c
-   Artur Miguel Dias, 2011
+ 
    
-   O Cão Dancarino contra os Carangejos Mutantes Assassinos
+   O CÃ£o Dancarino contra os Carangejos Mutantes Assassinos
 
    Programa escrito em C/C++ sobre a plataforma wxWidget.
    A plataforma wxWidget funciona em Windows, MacOS e Linux.
 
    Este ficheiro constitui apenas um ponto de partida para o
    seu trabalho. Todo este ficheiro pode e deve ser alterado
-   à vontade, a começar neste comentário.
+   Ã  vontade, a comeÃ§ar neste comentÃ¡rio.
 */
 
 #include <stdio.h>
@@ -277,7 +277,7 @@ void criar_imagens(void)
 }
 
 
-/* ATORES - CONSTANTES, TIPOS E VARIÁVEIS */
+/* ATORES - CONSTANTES, TIPOS E VARIÃVEIS */
 
 #define FRONTEIRA    '#'
 #define HEROI        'H'
@@ -301,7 +301,7 @@ typedef AtorStruct *Ator;
 
 
 
-/* MUNDO - CONSTANTES, TIPOS E VARIÁVEIS */
+/* MUNDO - CONSTANTES, TIPOS E VARIÃVEIS */
 
 #define LARGURA_MUNDO   31
 #define ALTURA_MUNDO    18
@@ -317,7 +317,7 @@ Ator heroi;
 int tempo = 0;
 
 
-// FUNÇÕES AUXILIARES
+// FUNÃ‡Ã•ES AUXILIARES
 
 void erro(char mensagem[])
 {
@@ -328,7 +328,7 @@ void erro(char mensagem[])
 }
 
 
-/* ATORES - FUNÇÕES */
+/* ATORES - FUNÃ‡Ã•ES */
 
 int n_atores;
 
@@ -383,7 +383,7 @@ void fazer_movimento_perseguidor(Ator p, int dx, int dy)
 	}
 	else if((mundo[p->x + dx][p->y + dy] -> tipo == DEFESA))
 	{
-		// Em vez de ficarem parados, vao se movimentando ate terem hipotese de ir em direcçao ao heroi.
+		// Em vez de ficarem parados, vao se movimentando ate terem hipotese de ir em direcÃ§ao ao heroi.
 		switch(random){
 			case 0:
 			//cima
@@ -418,9 +418,9 @@ void perseguidor_movimentacao(Ator p)
 {
 	int dx = 0;
 	int dy = 0;
-// FAZER: O perseguidor toma uma decisão de movimentação e move-se.
-// Para começar os perseguidores andar só para a direita.
-// Depois poderá tornar os perseguidores um pouco mais inteligentes.
+// FAZER: O perseguidor toma uma decisÃ£o de movimentaÃ§Ã£o e move-se.
+// Para comeÃ§ar os perseguidores andar sÃ³ para a direita.
+// Depois poderÃ¡ tornar os perseguidores um pouco mais inteligentes.
 	if(heroi->x < p->x)
 	{
 		if( heroi->y > p->y)
@@ -553,7 +553,7 @@ void heroi_reage_a_tecla(Ator h, Direction direction)
 }
 
 
-/* MUNDO - FUNÇÕES */
+/* MUNDO - FUNÃ‡Ã•ES */
 
 void mundo_criar_vazio(void)
 {
@@ -578,7 +578,7 @@ void mundo_criar_fronteira(void)
 
 void mundo_criar_defesas(void)
 {
-// FAZER: criar as defesas em posições aleatórias livres
+// FAZER: criar as defesas em posiÃ§Ãµes aleatÃ³rias livres
 int i,x,y;
 for(i = 0; i < N_DEFESAS; i ++)
 	{	
@@ -593,7 +593,7 @@ for(i = 0; i < N_DEFESAS; i ++)
 
 void mundo_criar_perseguidores(void)
 {
-// FAZER: cria os perseguidores em posições aleatórias livres
+// FAZER: cria os perseguidores em posiÃ§Ãµes aleatÃ³rias livres
 int i,x,y;
 for( i = 0; i < N_PERSEGUIDORES; i ++)
 {
@@ -683,9 +683,9 @@ void mundo_carregar_jogo_inicial(char nome_ficheiro[])
 	file = fopen(nome_ficheiro, "r");
 	
 	if(file == NULL) {
-		//n‹o existe ficheiro de jogo
+		//nÂ‹o existe ficheiro de jogo
 		//mensagem de erro para stderr
-		fprintf(stderr,"ERRO: N‹o existe ficheiro de jogo!");
+		fprintf(stderr,"ERRO: NÂ‹o existe ficheiro de jogo!");
 		
 		//carrega jogo sem o ficheiro
 		mundo_preparar_novo_jogo();
@@ -697,7 +697,7 @@ void mundo_carregar_jogo_inicial(char nome_ficheiro[])
 		
 		//carregar ficheiro normalmente
 		
-		//saltar trs primeiras linhas
+		//saltar trÂs primeiras linhas
 		for (i=0; i<3; i++) {
 			fgets(str,CHARMAX,file);
 		}
@@ -844,8 +844,8 @@ void mooshak(void)
 void comando_about(void)
 {
     Alert("About",
-             "O Cão Dançarino defende-se dos Carangejos Mutantes Assassinos\n\n"
-             "por Otelo e Desdémona\n\nFCT/UNL, 2011");
+             "O CÃ£o DanÃ§arino defende-se dos Carangejos Mutantes Assassinos\n\n"
+             "por Otelo e DesdÃ©mona\n\nFCT/UNL, 2011");
 }
 
 void comando_new_game(void)
@@ -882,7 +882,7 @@ void comando_save(char nome_ficheiro[])
 int GameMain(void)
 {
     GameSetup(
-        "O Cão Dançarino",
+        "O CÃ£o DanÃ§arino",
         LARGURA_MUNDO * TAMANHO_ATOR, ALTURA_MUNDO * TAMANHO_ATOR,
         mundo_redesenhar_tudo, mundo_movimentacao, mundo_tecla, mundo_animacao,
         comando_about, comando_new_game, comando_high_scores, comando_quit,
